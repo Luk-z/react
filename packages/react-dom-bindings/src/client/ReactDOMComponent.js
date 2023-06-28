@@ -1525,6 +1525,7 @@ export function updateProperties(
             }
             case 'checked': {
               checked = nextProp;
+              domElement.checked = checked;
               break;
             }
             case 'defaultChecked': {

@@ -28,6 +28,19 @@ function List() {
     }
   };
 
+  const [val, setVal] = useState('false');
+  const async = true;
+  const onChange = e => {
+    if (async) {
+      setTimeout(() => {
+        setVal(e.target.value);
+      }, 1000);
+      return;
+    }
+
+    setVal(e.target.value);
+  };
+
   return (
     <>
       <input ref={inputRef} data-testname="AddItemInput" />
@@ -39,6 +52,28 @@ function List() {
           <ListItem key={index} label={label} />
         ))}
       </ul>
+      <div>
+        Sample radio box example to test radio input onChange with async
+        setValue:
+        <br />
+        TRUE
+        <input
+          name="rg"
+          value="true"
+          onChange={onChange}
+          checked={val === 'true'}
+          type="radio"
+        />
+        FALSE
+        <input
+          name="rg"
+          value="false"
+          onChange={onChange}
+          checked={val === 'false'}
+          type="radio"
+        />
+        <div>VALUE: {val}</div>
+      </div>
     </>
   );
 }

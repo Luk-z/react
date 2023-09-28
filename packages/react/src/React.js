@@ -36,6 +36,7 @@ import {lazy} from './ReactLazy';
 import {forwardRef} from './ReactForwardRef';
 import {memo} from './ReactMemo';
 import {cache} from './ReactCache';
+import {postpone} from './ReactPostpone';
 import {
   getCacheSignal,
   getCacheForType,
@@ -100,6 +101,7 @@ export {
   lazy,
   memo,
   cache,
+  postpone as unstable_postpone,
   useCallback,
   useContext,
   useEffect,
@@ -130,7 +132,7 @@ export {
   useTransition,
   startTransition,
   useDeferredValue,
-  REACT_SUSPENSE_LIST_TYPE as SuspenseList,
+  REACT_SUSPENSE_LIST_TYPE as unstable_SuspenseList,
   REACT_LEGACY_HIDDEN_TYPE as unstable_LegacyHidden,
   REACT_OFFSCREEN_TYPE as unstable_Offscreen,
   getCacheSignal as unstable_getCacheSignal,
